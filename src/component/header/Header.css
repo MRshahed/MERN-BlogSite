@@ -1,11 +1,11 @@
 .header {
   width: 100%;
   background-color: white;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  padding-top: 1rem;
+  padding-top: 0.75rem;
   font-family: var(--josefin-font);
+  z-index: 2;
 }
 
 .nav__container {
@@ -13,18 +13,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 2rem 2rem 2rem;
+  margin: 0 3rem 2rem 3rem;
 }
-.header__social {
-  display: flex;
-  justify-content: center;
+.header__logo {
   align-items: center;
-  column-gap: 2rem;
+  text-align: center;
 }
-.header__social-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
+.header__logo-text {
+  font-family: var(--lora-font);
+  font-size: 22px;
+  color: var(--title-color);
+  font-weight: 800;
 }
+
 .header__right {
   display: flex;
   align-items: center;
@@ -48,6 +49,7 @@
   align-items: center;
   column-gap: 1.5rem;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   cursor: pointer;
+  color: var(--title-color);
 }

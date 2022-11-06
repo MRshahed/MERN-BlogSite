@@ -1,8 +1,13 @@
 :root {
   /* ============== Colors =============== */
 
+  --container-color: hsl(0, 0%, 98%);
+  --title-color: hsl(0, 0%, 30%);
+  --text-color: hsl(0, 0%, 40%);
   /* ============== Font =============== */
   --josefin-font: "Josefin Sans", sans-serif;
+  --lora-font: "Lora", serif;
+  --varela-font: "Varela", sans-serif;
 }
 
 html {
@@ -18,6 +23,8 @@ button {
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 a {
   text-decoration: none;

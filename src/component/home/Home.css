@@ -1,0 +1,33 @@
+.home__container {
+  margin-top: 1rem;
+}
+
+.home__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--lora-font);
+  color: #b2b2b2;
+}
+
+.home__title-sm {
+  position: absolute;
+  top: 15%;
+  font-style: 20px;
+  color: #303841;
+  z-index: 1;
+}
+
+.home__title-lg {
+  position: absolute;
+  top: 17%;
+  font-size: 100px;
+  z-index: 1;
+}
+
+.home__img {
+  width: 100%;
+  height: 500px;
+  margin-top: 80px;
+  object-fit: cover;
+}
