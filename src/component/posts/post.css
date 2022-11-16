@@ -6,12 +6,13 @@
 .post__content {
   width: 460px;
   margin: 2rem 1rem 1rem 3rem;
-  border: 2px solid var(--container-color);
+  /* border: 2px solid var(--container-color); */
 }
 .post__img {
   height: 250px;
   width: 100%;
   object-fit: cover;
+  border-radius: 1.5rem;
 }
 
 .Post__title {

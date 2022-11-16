@@ -1,7 +1,7 @@
 import Header from "./component/header/Header";
 import Home from "./component/home/Home";
-import Sidebar from "./component/sidebar/Sidebar";
 import Posts from "./component/posts/Posts";
+import Page from "./component/posts/page/Page";
 import "./App.css";
 
 const App = () => {
@@ -9,8 +9,9 @@ const App = () => {
     <>
       <Header />
       <main className="main">
-        <Home />
-        <Posts />
+        {/* <Home />
+        <Posts /> */}
+        <Page />
       </main>
     </>
   );
