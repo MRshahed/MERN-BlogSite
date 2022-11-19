@@ -1,9 +1,11 @@
 :root {
   /* ============== Colors =============== */
 
-  --container-color: hsl(0, 0%, 98%);
-  --title-color: hsl(0, 0%, 30%);
-  --text-color: hsl(0, 0%, 40%);
+  --container-color: #eff5f5;
+  --title-color: #041c32;
+  --text-color: #04293a;
+  --button-color: #064663;
+  --button-second: #ecb365;
   /* ============== Font =============== */
   --josefin-font: "Josefin Sans", sans-serif;
   --lora-font: "Lora", serif;
