@@ -1,21 +1,28 @@
 import React from "react";
 import "./Header.css";
 import img from "../../assets/profile1.png";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="header">
       <nav className="nav__container">
         <div className="header__logo">
-          <a href="index.html" className="header__logo-text">
+          <Link to={"/"} className="header__logo-text">
             Wonder Land
-          </a>
+          </Link>
         </div>
 
         <div className="header__list">
           <ul className="header__list-item">
-            <li>Home</li>
-            <li>Posts</li>
-            <li>Write</li>
+            <li>
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link to={"posts"}>Posts</Link>
+            </li>
+            <li>
+              <Link to={"write"}>Write</Link>
+            </li>
             <li>Logout</li>
           </ul>
         </div>

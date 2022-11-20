@@ -15,8 +15,12 @@
 html {
   scroll-behavior: smooth;
   margin: 0;
+  height: 100%;
+  width: 100%;
 }
-
+Link {
+  text-decoration: none;
+}
 button {
   cursor: pointer;
   border: none;

@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../../assets/homBG2.png";
+import Posts from "../posts/Posts";
 import "./Home.css";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
         </div>
         <img src={img} className="home__img" alt="home img" />
       </div>
+      <Posts />
     </section>
   );
 };
