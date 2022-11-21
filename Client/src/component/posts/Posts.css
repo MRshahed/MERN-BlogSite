@@ -2,3 +2,10 @@
   display: flex;
   justify-content: space-between;
 }
+.posts__container {
+  display: grid;
+  grid-template-columns: 2fr max-content;
+  justify-content: center;
+  margin-bottom: 1rem;
+  align-items: center;
+}

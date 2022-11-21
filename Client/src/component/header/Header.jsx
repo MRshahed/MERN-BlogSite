@@ -27,7 +27,15 @@ const Header = () => {
           </ul>
         </div>
         <div className="header__right">
-          <img className="header__img" src={img} alt="profile img" />
+          <ul className="header__list-item">
+            <li>
+              <Link to={"login"}>Login</Link>
+            </li>
+            <li>
+              <Link to={"register"}>Register</Link>
+            </li>
+          </ul>
+          {/* <img className="header__img" src={img} alt="profile img" /> */}
           <a className="header__search-icon" alt="search icon">
             <i className="header__search-icon bx bx-search-alt-2"></i>
           </a>

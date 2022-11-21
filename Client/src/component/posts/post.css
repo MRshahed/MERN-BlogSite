@@ -1,19 +1,15 @@
 .post__container {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 1rem;
-  border-right: 2px solid var(--container-color);
+  width: 600px;
 }
 .post__content {
-  width: 360px;
+  /* width: 360px; */
   margin: 2rem 0rem 1rem 3rem;
-  /* border: 2px solid var(--container-color); */
 }
 .post__img {
   height: 250px;
   width: 100%;
   object-fit: cover;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 
 .Post__title {
@@ -33,4 +29,15 @@
   font: var(--lora-font);
   font-size: 12px;
   font-style: italic;
+}
+
+.post__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--container-color);
+  border-top: 0;
+  padding: 0 1rem;
+  border-radius: 1rem;
 }

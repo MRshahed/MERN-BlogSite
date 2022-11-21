@@ -1,103 +1,26 @@
 import React from "react";
-import Img from "../../assets/post1.jpg";
+import { Link } from "react-router-dom";
 import "./post.css";
 
-const Post = () => {
+const Post = ({ post }) => {
   return (
     <div className="post__container">
       <div className="post__content">
-        <img className="post__img" src={Img} alt="post 1 img" />
+        <img className="post__img" src={post.photo} alt={post.photo} />
 
         <div className="post__info">
           <div className="post__catagories">
-            <span className="post__catagory">Music</span>
+            {post.catagories.map((c) => (
+              <span className="post__catagory">{c.name}</span>
+            ))}
           </div>
-          <span className="Post__title">
-            Est ut anim exercitation pariatur occaecat anim ullamco voluptate
-            veniam non minim.
+          <Link to={`/post/${post._id}`}>
+            <span className="Post__title">{post.title}</span>
+          </Link>
+          <span className="post__date">
+            {new Date(post.createdAt).toDateString()}
           </span>
-          <hr />
-          <span className="post__date">1 hour ago</span>
-        </div>
-      </div>
-
-      <div className="post__content">
-        <img className="post__img" src={Img} alt="post 1 img" />
-
-        <div className="post__info">
-          <div className="post__catagories">
-            <span className="post__catagory">Music</span>
-          </div>
-          <span className="Post__title">
-            Est ut anim exercitation pariatur occaecat anim ullamco voluptate
-            veniam non minim.
-          </span>
-          <hr />
-          <span className="post__date">1 hour ago</span>
-        </div>
-      </div>
-
-      <div className="post__content">
-        <img className="post__img" src={Img} alt="post 1 img" />
-
-        <div className="post__info">
-          <div className="post__catagories">
-            <span className="post__catagory">Music</span>
-          </div>
-          <span className="Post__title">
-            Est ut anim exercitation pariatur occaecat anim ullamco voluptate
-            veniam non minim.
-          </span>
-          <hr />
-          <span className="post__date">1 hour ago</span>
-        </div>
-      </div>
-
-      <div className="post__content">
-        <img className="post__img" src={Img} alt="post 1 img" />
-
-        <div className="post__info">
-          <div className="post__catagories">
-            <span className="post__catagory">Music</span>
-          </div>
-          <span className="Post__title">
-            Est ut anim exercitation pariatur occaecat anim ullamco voluptate
-            veniam non minim.
-          </span>
-          <hr />
-          <span className="post__date">1 hour ago</span>
-        </div>
-      </div>
-
-      <div className="post__content">
-        <img className="post__img" src={Img} alt="post 1 img" />
-
-        <div className="post__info">
-          <div className="post__catagories">
-            <span className="post__catagory">Music</span>
-          </div>
-          <span className="Post__title">
-            Est ut anim exercitation pariatur occaecat anim ullamco voluptate
-            veniam non minim.
-          </span>
-          <hr />
-          <span className="post__date">1 hour ago</span>
-        </div>
-      </div>
-
-      <div className="post__content">
-        <img className="post__img" src={Img} alt="post 1 img" />
-
-        <div className="post__info">
-          <div className="post__catagories">
-            <span className="post__catagory">Music</span>
-          </div>
-          <span className="Post__title">
-            Est ut anim exercitation pariatur occaecat anim ullamco voluptate
-            veniam non minim.
-          </span>
-          <hr />
-          <span className="post__date">1 hour ago</span>
+          <p className="post__description">{post.description}</p>
         </div>
       </div>
     </div>
