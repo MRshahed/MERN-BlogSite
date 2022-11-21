@@ -3,6 +3,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
+//Update User
 Router.put("/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {
     if (req.body.password) {
@@ -25,6 +26,7 @@ Router.put("/:id", async (req, res) => {
   }
 });
 
+//Delete User
 Router.delete("/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {
     try {
@@ -38,6 +40,7 @@ Router.delete("/:id", async (req, res) => {
   }
 });
 
+//Get User
 Router.get("/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);

@@ -3,6 +3,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
+//Create User
 Router.post("/register", async (req, res) => {
   try {
     const hashedPass = await bcrypt.hash(req.body.password, saltRounds);
@@ -19,6 +20,7 @@ Router.post("/register", async (req, res) => {
   }
 });
 
+//Login
 Router.post("/login", async (req, res) => {
   try {
     const foundUser = await User.findOne({ username: req.body.username });
