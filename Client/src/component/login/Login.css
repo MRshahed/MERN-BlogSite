@@ -44,7 +44,8 @@
   font-weight: 600;
   font-size: 14px;
 }
-.login__button:hover {
+.login__button:disabled {
+  cursor: not-allowed;
   background-color: var(--button-second);
 }
 .login__title {

@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import img from "../../assets/profile1.png";
 import { Link } from "react-router-dom";
+import { Context } from "../context/Context";
+import { LogOut } from "../context/Actions";
 const Header = () => {
+  const { user, dispatch } = useContext(Context);
+
+  const HangleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
   return (
     <header className="header">
       <nav className="nav__container">
@@ -18,27 +25,33 @@ const Header = () => {
               <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <Link to={"posts"}>Posts</Link>
+              <Link to={"/posts"}>Posts</Link>
             </li>
             <li>
-              <Link to={"write"}>Write</Link>
+              <Link to={"/write"}>Write</Link>
             </li>
-            <li>Logout</li>
+            {user && <li onClick={HangleLogout}>Logout</li>}
           </ul>
         </div>
         <div className="header__right">
-          <ul className="header__list-item">
-            <li>
-              <Link to={"login"}>Login</Link>
-            </li>
-            <li>
-              <Link to={"register"}>Register</Link>
-            </li>
-          </ul>
-          {/* <img className="header__img" src={img} alt="profile img" /> */}
-          <a className="header__search-icon" alt="search icon">
+          {user ? (
+            <Link to={"/settings"}>
+              <img className="header__img" src={img} alt="profile img" />
+            </Link>
+          ) : (
+            <ul className="header__list-item">
+              <li>
+                <Link to={"/login"}>Login</Link>
+              </li>
+              <li>
+                <Link to={"/register"}>Register</Link>
+              </li>
+            </ul>
+          )}
+
+          <span className="header__search-icon" alt="search icon">
             <i className="header__search-icon bx bx-search-alt-2"></i>
-          </a>
+          </span>
         </div>
       </nav>
     </header>

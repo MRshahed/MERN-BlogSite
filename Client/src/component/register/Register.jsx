@@ -1,6 +1,7 @@
 import "./Register.css";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -62,6 +63,12 @@ const Register = () => {
         >
           Register
         </button>
+        <p className="register__footer-p">
+          Already Have an Account?{" "}
+          <Link to={"/login"}>
+            <b>Login</b>
+          </Link>
+        </p>
       </form>
     </div>
   );

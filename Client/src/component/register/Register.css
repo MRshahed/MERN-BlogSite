@@ -53,3 +53,8 @@
   font-weight: 600;
   color: var(--button-color);
 }
+.register__footer-p {
+  margin-top: 1rem;
+  color: var(--container-color);
+  font-family: var(--lora-font);
+}

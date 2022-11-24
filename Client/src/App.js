@@ -9,19 +9,22 @@ import Register from "./component/register/Register";
 import Error from "./component/error/Error";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import { useContext } from "react";
+import { Context } from "./component/context/Context";
 
 const App = () => {
+  const { user } = useContext(Context);
   return (
     <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
+        <Route path="login" element={user ? <Home /> : <Login />} />
+        <Route path="register" element={user ? <Home /> : <Register />} />
         <Route path="post/:postId" element={<Page />} />
         <Route path="posts" element={<Posts />} />
-        <Route path="write" element={<Write />} />
-        <Route path="settings" element={<Settings />} />
+        <Route path="write" element={user ? <Write /> : <Login />} />
+        <Route path="settings" element={user ? <Settings /> : <Login />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
