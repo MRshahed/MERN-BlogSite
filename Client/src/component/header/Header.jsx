@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import "./Header.css";
-import img from "../../assets/profile1.png";
 import { Link } from "react-router-dom";
 import { Context } from "../context/Context";
-import { LogOut } from "../context/Actions";
 const Header = () => {
   const { user, dispatch } = useContext(Context);
 
@@ -36,7 +34,11 @@ const Header = () => {
         <div className="header__right">
           {user ? (
             <Link to={"/settings"}>
-              <img className="header__img" src={img} alt="profile img" />
+              <img
+                className="header__img"
+                src={user.profilepic}
+                alt="profile"
+              />
             </Link>
           ) : (
             <ul className="header__list-item">

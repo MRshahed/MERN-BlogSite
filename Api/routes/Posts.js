@@ -9,6 +9,7 @@ Router.post("/", async (req, res) => {
       username: req.body.username,
       title: req.body.title,
       description: req.body.description,
+      photo: req.body.photo,
     });
     const savePost = await newPost.save();
     res.status(200).json(savePost);

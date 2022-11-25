@@ -7,9 +7,10 @@ const userRoute = require("./routes/Users");
 const postRoute = require("./routes/Posts");
 const catRoute = require("./routes/Catagories");
 const multer = require("multer");
+const path = require("path");
 const app = express();
 app.use(express.json());
-
+app.use("/images", express.static(path.join(__dirname, "/images")));
 mongoose.connect(process.env.MONGO_URL);
 app.use(bodyParser.urlencoded({ extended: true }));
 
