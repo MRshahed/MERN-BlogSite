@@ -36,7 +36,9 @@ const Page = () => {
           {post.title}
           {user && user.username === post.username && (
             <div className="page__edit-container">
-              <i className="page__edit-icon bx bxs-edit"></i>
+              <Link to={`/update/${path}`} className="page__edit-icon">
+                <i className=" bx bxs-edit"></i>
+              </Link>
               <i
                 className="page__edit-icon bx bxs-trash"
                 onClick={handleDelete}

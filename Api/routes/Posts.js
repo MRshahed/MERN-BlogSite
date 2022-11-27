@@ -32,7 +32,7 @@ Router.put("/:id", async (req, res) => {
       );
       res.status(200).json(updatedPost);
     } else {
-      res.status(401).json("Access Denied!");
+      res.status(404).json("Access Denied!");
     }
   } catch (err) {
     res.status(500).json(err);

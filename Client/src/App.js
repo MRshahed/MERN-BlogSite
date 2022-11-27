@@ -7,6 +7,7 @@ import Settings from "./component/settings/Settings";
 import Login from "./component/login/Login";
 import Register from "./component/register/Register";
 import Error from "./component/error/Error";
+import Update from "./component/posts/update/Update";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { useContext } from "react";
@@ -25,6 +26,8 @@ const App = () => {
         <Route path="posts" element={<Posts />} />
         <Route path="write" element={user ? <Write /> : <Login />} />
         <Route path="settings" element={user ? <Settings /> : <Login />} />
+        <Route path="update/:postID" element={user ? <Update /> : <Login />} />
+
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
