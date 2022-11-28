@@ -24,11 +24,11 @@
 .upload__button {
   background-color: var(--title-color);
   border-radius: 0.5rem;
-  padding: 1rem 1rem;
-  height: 30px;
+  padding: 0.5rem;
   color: var(--container-color);
   font-family: var(--lora-font);
   font-weight: 600;
+  font-size: 13px;
   display: flex;
   flex-direction: column;
   justify-content: center;

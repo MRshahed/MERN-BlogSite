@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../context/Context";
 const Header = () => {
   const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/";
 
   const HangleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -33,10 +34,10 @@ const Header = () => {
         </div>
         <div className="header__right">
           {user ? (
-            <Link to={"/settings"}>
+            <Link to={`/settings/${user._id}`}>
               <img
                 className="header__img"
-                src={user.profilepic}
+                src={PF + user.profilepic}
                 alt="profile"
               />
             </Link>

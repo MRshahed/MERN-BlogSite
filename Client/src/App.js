@@ -25,7 +25,10 @@ const App = () => {
         <Route path="post/:postId" element={<Page />} />
         <Route path="posts" element={<Posts />} />
         <Route path="write" element={user ? <Write /> : <Login />} />
-        <Route path="settings" element={user ? <Settings /> : <Login />} />
+        <Route
+          path="settings/:userID"
+          element={user ? <Settings /> : <Login />}
+        />
         <Route path="update/:postID" element={user ? <Update /> : <Login />} />
 
         <Route path="*" element={<Error />} />

@@ -21,6 +21,14 @@ const UserSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    fullName: {
+      type: String,
+      default: "",
+    },
+    proDisc: {
+      type: String,
+      default: "",
+    },
   },
   { timestamps: true }
 );
