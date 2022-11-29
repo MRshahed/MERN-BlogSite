@@ -3,24 +3,27 @@ import { useContext, useState } from "react";
 import axios from "axios";
 
 import { Context } from "../context/Context";
+import { UpdateError, UpdateStart, UpdateSuccess } from "../context/Actions";
 const PF = "http://localhost:5000/images/";
 
 const Settings = () => {
   const [file, setFile] = useState(null);
-  const { user } = useContext(Context);
-  const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPasseword] = useState("");
-  const [fullname, setFullname] = useState("");
-  const [desc, setDesc] = useState("");
+  const { user, dispatch } = useContext(Context);
+  const [userName, setUserName] = useState(user.username);
+  const [email, setEmail] = useState(user.email);
+  const [password, setPasseword] = useState(user.password);
+  const [fullname, setFullname] = useState(user.fullName);
+  const [desc, setDesc] = useState(user.proDisc);
+  const [update, setUpdate] = useState(false);
 
   const handleUpdate = async (e) => {
     e.preventDefault();
+    dispatch(UpdateStart);
     const updateUser = {
       userName,
       email,
       password,
-      fulName: fullname,
+      fullName: fullname,
       proDisc: desc,
       userId: user._id,
     };
@@ -38,9 +41,11 @@ const Settings = () => {
       }
     }
     try {
-      await axios.put(`/users/${user._id}`, updateUser);
-      window.location.replace("/");
+      const res = await axios.put(`/users/${user._id}`, updateUser);
+      setUpdate(true);
+      dispatch(UpdateSuccess(res.data));
     } catch (err) {
+      dispatch(UpdateError);
       console.log(err);
     }
   };
@@ -71,6 +76,11 @@ const Settings = () => {
           </div>
         </div>
         <hr />
+        {update && (
+          <p className="register__footer-p" style={{ color: "green" }}>
+            Profile Updated Successfully!
+          </p>
+        )}
 
         <form className="settings__info">
           <div className="settings__info-content">
@@ -78,7 +88,7 @@ const Settings = () => {
             <input
               type="text"
               placeholder="Full Name"
-              value={user.fulName}
+              value={fullname}
               onChange={(e) => setFullname(e.target.value)}
             />
 
@@ -86,7 +96,7 @@ const Settings = () => {
             <input
               type="text"
               placeholder="Usernrame"
-              value={user.username}
+              value={userName}
               onChange={(e) => setUserName(e.target.value)}
             />
 
@@ -94,7 +104,7 @@ const Settings = () => {
             <input
               type="email"
               placeholder="Email"
-              value={user.email}
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
@@ -102,6 +112,7 @@ const Settings = () => {
             <input
               type="password"
               placeholder="********"
+              value={password}
               onChange={(e) => setPasseword(e.target.value)}
             />
 
@@ -110,7 +121,7 @@ const Settings = () => {
               type="text"
               className="settings__textarea"
               placeholder="Write about yourself..."
-              value={user.proDisc}
+              value={desc}
               onChange={(e) => setDesc(e.target.value)}
             />
           </div>
